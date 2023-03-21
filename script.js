@@ -1,8 +1,12 @@
+//require filesystem para trabajar con archivos.
+const fs = require('fs')
+
 //Clase Product Manager
 class ProductManager {
 
     //Funcion constructora para la creacion.
-    constructor() {
+    constructor(path) {
+        this.path = path
         this.products = [];
     }
 
