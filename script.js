@@ -7,7 +7,6 @@ class ProductManager {
     //Funcion constructora para la creacion.
     constructor(path) {
         this.path = path
-        this.products = [];
     }
 
     //id que solo se incrementa cuando se añade un producto.
@@ -15,10 +14,7 @@ class ProductManager {
 
     //Metodo añadir producto
     addProduct(product) {
-        const productRepeated = this.products.find(element => element.code === product.code);
-        if(productRepeated) return "Product already added.";
-        product.id = ProductManager.generateId ++;
-        this.products.push(product);
+        fs.writeFile
     }
 
     //Metodo para obtener todos los productos
