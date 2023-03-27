@@ -1,1 +1,18 @@
-{"title":"Alpine roses masksss","description":"mascaras para la cara","price":2000,"thumbnail":"https://firebasestorage.googleapis.com/v0/b/bossyapp-54cf2.appspot.com/o/productsImages%2Fmask_alpineroses.png?alt=media&token=d84fd60e-e3bc-4d34-ba41-025bc3d6797f","code":"1S","stock":5}
+[{
+    "id": 1,
+    "title": "Alpine roses masksss",
+    "description": "mascaras para la cara",
+    "price": 2000,
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/bossyapp-54cf2.appspot.com/o/productsImages%2Fmask_alpineroses.png?alt=media&token=d84fd60e-e3bc-4d34-ba41-025bc3d6797f",
+    "code": "1S",
+    "stock": 5
+},
+{
+    "id": 2,
+    "title": "Idraet breast volume",
+    "description": "Voluminizador",
+    "price": 1000,
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/bossyapp-54cf2.appspot.com/o/productsImages%2Fbreastvolume95.png?alt=media&token=34237300-5b6d-445d-9d6c-4fb7934b3047",
+    "code": "1B",
+    "stock": 2
+}]
