@@ -19,6 +19,14 @@ class ProductManager {
         }
     }
 
+    //Metodo para eliminar un producto por su ID
+    deleteProduct = async id =>{
+        const products = await this.getProducts()
+        const newArray = products.filter(product => product.id !== id)
+        await this.writeFile(newArray)
+    }
+
+    //Metodo que recibe data y escribe en el path de cada product manager.
     writeFile = async data => {
         try {
             await fs.promises.writeFile(this.path, JSON.stringify(data))
@@ -29,9 +37,9 @@ class ProductManager {
 
     //Metodo añadir producto
     addProduct = async product => {
+        const products = await this.getProducts()
         try {
-            const products = this.getProducts
-            let newProduct = { ...product, id: generateId }
+            let newProduct = { id: await this.generateId(), ...product }
             products.push(newProduct)
             await this.writeFile(products)
         } catch (error) {
@@ -60,6 +68,7 @@ class ProductManager {
         }
     }
 
+    //Metodo para borrar todos los productos.
     deleteAllProducts = async () => {
         this.addProduct()
     }
