@@ -20,10 +20,19 @@ class ProductManager {
     }
 
     //Metodo para eliminar un producto por su ID
-    deleteProduct = async id =>{
+    deleteProduct = async id => {
         const products = await this.getProducts()
         const newArray = products.filter(product => product.id !== id)
         await this.writeFile(newArray)
+    }
+
+    //Metodo para actualizar un producto.
+    updateProduct = async (id, obj) => {
+        const products = await this.getProducts()
+        const product = await this.getProductById(id)
+        const newProduct = { ...product, ...obj }
+        products.splice(products.indexOf(product), 1, newProduct)
+        await this.writeFile(products)
     }
 
     //Metodo que recibe data y escribe en el path de cada product manager.
@@ -51,6 +60,7 @@ class ProductManager {
     getProducts = async () => {
         try {
             const products = await fs.promises.readFile(this.path, "utf-8")
+            if(!products) return []
             return JSON.parse(products)
         } catch (error) {
             console.log(`Error: ${error}`)
@@ -70,7 +80,7 @@ class ProductManager {
 
     //Metodo para borrar todos los productos.
     deleteAllProducts = async () => {
-        this.addProduct()
+        await this.writeFile([])
     }
 }
 
