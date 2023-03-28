@@ -84,4 +84,5 @@ class ProductManager {
     }
 }
 
+//Usamos module.exports para poder usarlo en el archivo 'script.js'
 module.exports = ProductManager
